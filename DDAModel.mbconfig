@@ -1,0 +1,244 @@
+﻿{
+  "Scenario": "Regression",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "C:\\Users\\nekon\\Documents\\School\\4th year\\Sem2\\TestDataPassive.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "passive_score",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 3
+      },
+      {
+        "ColumnName": "difficulty",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 3
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 2,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.99694908107125568,
+        "RuntimeInSeconds": 0.508,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "passive_score"
+            ],
+            "InputColumnNames": [
+              "passive_score"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "passive_score"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "NumberOfLeaves": 5381,
+            "MinimumExampleCountPerLeaf": 23,
+            "LearningRate": 0.16196412711529826,
+            "NumberOfTrees": 1046,
+            "SubsampleFraction": 0.376859104690912,
+            "MaximumBinCountPerFeature": 221,
+            "FeatureFraction": 0.99461928795474741,
+            "L1Regularization": 2.8083212712767382E-10,
+            "L2Regularization": 0.8914011394994118,
+            "LabelColumnName": "difficulty",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.99694749923994852,
+        "RuntimeInSeconds": 0.73,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "passive_score"
+            ],
+            "InputColumnNames": [
+              "passive_score"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "passive_score"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "NumberOfLeaves": 5386,
+            "MinimumExampleCountPerLeaf": 23,
+            "LearningRate": 0.16135336229102615,
+            "NumberOfTrees": 1043,
+            "SubsampleFraction": 0.37616265303016538,
+            "MaximumBinCountPerFeature": 221,
+            "FeatureFraction": 0.9946379178667365,
+            "L1Regularization": 2.7939874034362159E-10,
+            "L2Regularization": 0.89511415202346056,
+            "LabelColumnName": "difficulty",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.99694747104114434,
+        "RuntimeInSeconds": 0.453,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "passive_score"
+            ],
+            "InputColumnNames": [
+              "passive_score"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "passive_score"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "NumberOfLeaves": 5381,
+            "MinimumExampleCountPerLeaf": 23,
+            "LearningRate": 0.16201531536895508,
+            "NumberOfTrees": 1049,
+            "SubsampleFraction": 0.37827764347838067,
+            "MaximumBinCountPerFeature": 221,
+            "FeatureFraction": 0.99466262060009325,
+            "L1Regularization": 2.8082699769554949E-10,
+            "L2Regularization": 0.89139545607913206,
+            "LabelColumnName": "difficulty",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.99694698955792449,
+        "RuntimeInSeconds": 0.552,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "passive_score"
+            ],
+            "InputColumnNames": [
+              "passive_score"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "passive_score"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "NumberOfLeaves": 5383,
+            "MinimumExampleCountPerLeaf": 23,
+            "LearningRate": 0.16231160197832661,
+            "NumberOfTrees": 1046,
+            "SubsampleFraction": 0.37587556794402988,
+            "MaximumBinCountPerFeature": 221,
+            "FeatureFraction": 0.99471634321395075,
+            "L1Regularization": 2.7961173974842447E-10,
+            "L2Regularization": 0.888682911874684,
+            "LabelColumnName": "difficulty",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.99694686622001871,
+        "RuntimeInSeconds": 0.768,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "passive_score"
+            ],
+            "InputColumnNames": [
+              "passive_score"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "passive_score"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "NumberOfLeaves": 5377,
+            "MinimumExampleCountPerLeaf": 23,
+            "LearningRate": 0.16210460327577858,
+            "NumberOfTrees": 1054,
+            "SubsampleFraction": 0.37419126885847936,
+            "MaximumBinCountPerFeature": 222,
+            "FeatureFraction": 0.99458759628415527,
+            "L1Regularization": 2.7970018095233428E-10,
+            "L2Regularization": 0.89317442329912766,
+            "LabelColumnName": "difficulty",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ReplaceMissingValues",
+      "e1": "Concatenate",
+      "e2": "LightGbmRegression"
+    },
+    "Schema": "e0 * e1 * e2",
+    "MetricName": "RSquared"
+  },
+  "Type": "TrainingConfig",
+  "Version": 3,
+  "TrainingOption": {
+    "Version": 0,
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 300,
+    "OptimizeMetric": "RSquared",
+    "LabelColumn": "difficulty",
+    "AvailableTrainers": [
+      "LGBM"
+    ],
+    "Seed": 0
+  }
+}
