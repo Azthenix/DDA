@@ -1,3 +1,5 @@
+using Microsoft.Xna.Framework;
+using ReLogic.Graphics;
 using System;
 using Terraria;
 using Terraria.Chat;

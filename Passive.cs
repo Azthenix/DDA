@@ -5,6 +5,13 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.UI;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
+using Terraria.GameContent;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria.UI.Chat;
+using ReLogic.Graphics;
 
 namespace DDA
 {
@@ -18,6 +25,13 @@ namespace DDA
         public override void OnWorldLoad()
         {
             base.OnWorldLoad();
+        }
+
+        public override void UpdateUI(GameTime gameTime)
+        {
+            //Main.spriteBatch.Begin();
+            //ChatManager.DrawColorCodedString(Main.spriteBatch, FontAssets.DeathText.Value, $"{Passive.score} {Passive.difficulty}", pos, Color.Red, 1f, Vector2.Zero, Vector2.One * 5);
+            //Main.spriteBatch.End();
         }
 
         public override void PostUpdateEverything()
@@ -71,14 +85,30 @@ namespace DDA
 
                     Main.GameMode = 4;
 
-                    ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral($"{result.Passive_score} {result.Difficulty} {result.Score}"), Microsoft.Xna.Framework.Color.White);
-
                     counter %= 60;
                 }
             }
             catch(Exception e)
             {
-                ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(e.ToString()), Microsoft.Xna.Framework.Color.White);
+                ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(e.ToString()), Microsoft.Xna.Framework.Color.Red);
+            }
+        }
+
+        public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
+        {
+            int resourceBarIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Resource Bars"));
+            if (resourceBarIndex != -1)
+            {
+                layers.Insert(resourceBarIndex, new LegacyGameInterfaceLayer(
+                    "DDA: AI Stats",
+                    delegate {
+                        Vector2 pos = new Vector2(Main.screenWidth/2, 20);
+
+                        ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, FontAssets.MouseText.Value, $"Score: {Passive.score}\nDifficulty: {Passive.difficulty}", pos, Color.Cyan, 0f, Vector2.Zero, Vector2.One);
+                        return true;
+                    },
+                    InterfaceScaleType.UI)
+                );
             }
         }
     }
