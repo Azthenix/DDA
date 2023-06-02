@@ -16,6 +16,8 @@ using Terraria.GameContent.UI.Elements;
 
 using DDA.UI;
 
+using DDA.UI;
+
 namespace DDA
 {
     public class DDA : ModPlayer

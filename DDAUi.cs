@@ -82,7 +82,7 @@ namespace DDA.UI
             //list.Add(new UIText("\n"));
             //list.Add(new UIText("Player Damage: " + Main.LocalPlayer.GetDamage(DamageClass.Generic).Base + "x"));
 
-            container.Add(title);
+			container.Add(title);
 			container.Add(list);	
 			container.Add(qContainer);
 
