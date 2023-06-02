@@ -13,6 +13,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.UI.Chat;
 using ReLogic.Graphics;
 
+using DDA.UI;
+using Terraria.GameContent.UI.Elements;
+
 namespace DDA
 {
     public class Passive: ModSystem
@@ -29,8 +32,27 @@ namespace DDA
 
         public override void UpdateUI(GameTime gameTime)
         {
+            if (!Main.gameMenu
+                && DDAUi.visible)
+            {
+                ddaInterface?.Update(gameTime);
+
+                Dictionary<int, GameModeData> registeredGameModes = Main.RegisteredGameModes;
+                if (registeredGameModes.ContainsKey(4))
+                {
+                    GameModeData cMode = registeredGameModes[4];
+                    DDAUi.list.Clear();
+
+                    DDAUi.list.Add(new UIText("\n"));
+                    DDAUi.list.Add(new UIText("Enemy Damage: " + cMode.EnemyDamageMultiplier + "x"));
+                    DDAUi.list.Add(new UIText("Enemy Defense: " + cMode.EnemyDefenseMultiplier + "x"));
+                    DDAUi.list.Add(new UIText("Enemy HP: " + cMode.EnemyMaxLifeMultiplier + "x"));
+                }
+            }
+            //Vector2 pos = new Vector2(Main.screenWidth / 2, 20);
             //Main.spriteBatch.Begin();
             //ChatManager.DrawColorCodedString(Main.spriteBatch, FontAssets.DeathText.Value, $"{Passive.score} {Passive.difficulty}", pos, Color.Red, 1f, Vector2.Zero, Vector2.One * 5);
+
             //Main.spriteBatch.End();
         }
 
@@ -94,8 +116,37 @@ namespace DDA
             }
         }
 
+        internal DDAUi ddaUI;
+        public UserInterface ddaInterface;
+
+        public override void Load()
+        {
+            // this makes sure that the UI doesn't get opened on the server
+            // the server can't see UI, can it? it's just a command prompt
+
+            if (!Main.dedServ)
+            {
+                ddaUI = new DDAUi();
+                ddaUI.Initialize();
+                ddaInterface = new UserInterface();
+                ddaInterface.SetState(ddaUI);
+            }
+        }
+
+        private bool DrawSomethingUI()
+        {
+            // it will only draw if the player is not on the main menu
+            if (!Main.gameMenu
+                && DDAUi.visible)
+            {
+                ddaInterface.Draw(Main.spriteBatch, new GameTime());
+            }
+            return true;
+        }
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {
+            layers.Add(new LegacyGameInterfaceLayer("Cool Mod: Something UI", DrawSomethingUI, InterfaceScaleType.UI));
+
             int resourceBarIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Resource Bars"));
             if (resourceBarIndex != -1)
             {

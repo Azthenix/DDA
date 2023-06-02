@@ -165,3 +165,6 @@ C:\Users\nekon\Documents\My Games\Terraria\tModLoader\ModSources\DDA\obj\Debug\n
 C:\Users\nekon\Documents\My Games\Terraria\tModLoader\ModSources\DDA\obj\Debug\net6.0\refint\DDA.dll
 C:\Users\nekon\Documents\My Games\Terraria\tModLoader\ModSources\DDA\obj\Debug\net6.0\DDA.pdb
 C:\Users\nekon\Documents\My Games\Terraria\tModLoader\ModSources\DDA\obj\Debug\net6.0\ref\DDA.dll
+C:\Users\Administrator\Documents\My Games\Terraria\tModLoader\ModSources\DDA\obj\Debug\net6.0\DDA.dll
+C:\Users\Administrator\Documents\My Games\Terraria\tModLoader\ModSources\DDA\obj\Debug\net6.0\refint\DDA.dll
+C:\Users\Administrator\Documents\My Games\Terraria\tModLoader\ModSources\DDA\obj\Debug\net6.0\DDA.pdb

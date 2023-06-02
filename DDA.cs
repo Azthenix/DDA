@@ -9,18 +9,24 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.UI.Chat;
+using Terraria.UI;
+using System.Collections.Generic;
+using Terraria.GameContent.UI.Elements;
+
+
+using DDA.UI;
 
 namespace DDA
 {
-	public class DDA : ModPlayer
+    public class DDA : ModPlayer
     {
         public static int spRate = 1;
         public static int maxSp = 1;
         public float damage;
 
         public override void OnRespawn(Player player)
-		{
-			base.OnRespawn(player);
+        {
+            base.OnRespawn(player);
 
             Main.RegisteredGameModes[4] = new GameModeData
             {
@@ -39,9 +45,9 @@ namespace DDA
             Passive.score = Math.Max(Passive.score - 50, 0);
         }
 
-		public override void OnEnterWorld(Player player)
-		{
-			base.OnEnterWorld(player);
+        public override void OnEnterWorld(Player player)
+        {
+            base.OnEnterWorld(player);
 
             Main.RegisteredGameModes[4] = new GameModeData
             {
@@ -67,4 +73,8 @@ namespace DDA
             Main.LocalPlayer.GetDamage(DamageClass.Generic) += 1.0f;
         }
     }
+
+   
+    
+    
 }
